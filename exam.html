@@ -1,0 +1,1121 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>رواق - منصة التعلم الإلكتروني</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;900&display=swap');
+
+        * {
+            font-family: 'Tajawal', sans-serif;
+        }
+
+        body {
+            scroll-behavior: smooth;
+        }
+
+        .hero-section {
+            background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+                url('https://placehold.co/1920x1080');
+            background-size: cover;
+            background-position: center;
+        }
+
+        .course-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        }
+
+        .stats-item {
+            transition: all 0.3s ease;
+        }
+
+        .stats-item:hover {
+            transform: scale(1.05);
+        }
+
+        .mobile-menu {
+            transition: all 0.3s ease;
+        }
+
+        /* Animation for course cards */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .animate-fade {
+            animation: fadeIn 0.5s ease-out forwards;
+        }
+
+        /* Category icons styling */
+        .category-icon {
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto;
+            font-size: 28px;
+        }
+
+        /* Testimonial styling */
+        .testimonial-card {
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        .testimonial-card:hover {
+            box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .pricing {
+            padding: 80px 0;
+            background-color: #f8f8f8;
+        }
+
+        .pricing-tabs {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 40px;
+        }
+
+        .tab-btn {
+            padding: 12px 25px;
+            background-color: #ddd;
+            border: none;
+            cursor: pointer;
+            font-weight: bold;
+        }
+
+        .tab-btn:first-child {
+            border-radius: 4px 0 0 4px;
+        }
+
+        .tab-btn:last-child {
+            border-radius: 0 4px 4px 0;
+        }
+
+        .tab-btn.active {
+            background-color: #333;
+            color: white;
+        }
+
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+        }
+
+        .pricing-card {
+            background-color: #fff;
+            padding: 40px 30px;
+            border-radius: 8px;
+            text-align: center;
+            box-shadow: 0 3px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .pricing-card h3 {
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+
+        .price {
+            font-size: 36px;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+
+        .price span {
+            font-size: 16px;
+            font-weight: normal;
+        }
+
+        .pricing-card ul {
+            list-style: none;
+            margin-bottom: 30px;
+        }
+
+        .pricing-card ul li {
+            padding: 10px 0;
+            border-bottom: 1px solid #eee;
+        }
+
+        /* Responsive styles */
+        @media (max-width: 768px) {
+            .hero-content {
+                flex-direction: column;
+            }
+
+            .hero-text,
+            .hero-image {
+                width: 100%;
+            }
+
+            .hero-image {
+                margin-top: 30px;
+            }
+
+            .features-grid,
+            .pricing-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .pricing-tabs {
+                flex-direction: column;
+            }
+
+            .tab-btn {
+                border-radius: 4px !important;
+                margin-bottom: 10px;
+            }
+        }
+    </style>
+</head>
+
+<body class="bg-gray-50">
+    <!-- Header Navigation -->
+    <header class="bg-white shadow-md sticky top-0 z-50">
+        <div class="container mx-auto px-4 py-3 flex justify-between items-center">
+            <div class="flex items-center">
+                <a href="#" class="text-2xl font-bold text-blue-600 flex items-center">
+                    <img src="https://placehold.co/50x50" alt="شعار رواق التعليمية" class="h-10 w-10 mr-2">
+                    رواق
+                </a>
+            </div>
+
+            <div class="hidden md:flex items-center space-x-6 space-x-reverse">
+                <a href="#courses" class="text-gray-700 hover:text-blue-600">استعراض المواد</a>
+                <a href="#about" class="text-gray-700 hover:text-blue-600">عن رواق</a>
+                <a href="#blog" class="text-gray-700 hover:text-blue-600">المدونة</a>
+                <a href="#partners" class="text-gray-700 hover:text-blue-600">الشراكات</a>
+                <div class="flex items-center space-x-3 space-x-reverse">
+                    <a href="#login" class="text-gray-700 hover:text-blue-600">تسجيل الدخول</a>
+                    <span class="text-gray-300">|</span>
+                    <a href="#register"
+                        class="bg-blue-600 text-white px-4 py-2 rounded-md hover:bg-blue-700">التسجيل</a>
+                </div>
+            </div>
+
+            <button class="md:hidden text-gray-700 focus:outline-none" id="menu-toggle">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7">
+                    </path>
+                </svg>
+            </button>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div class="md:hidden mobile-menu hidden bg-white w-full absolute left-0 shadow-lg" id="mobile-menu">
+            <div class="container mx-auto px-4 py-2 flex flex-col">
+                <a href="#courses" class="py-2 text-gray-700 border-b border-gray-100">استعراض المواد</a>
+                <a href="#about" class="py-2 text-gray-700 border-b border-gray-100">عن رواق</a>
+                <a href="#blog" class="py-2 text-gray-700 border-b border-gray-100">المدونة</a>
+                <a href="#partners" class="py-2 text-gray-700 border-b border-gray-100">الشراكات</a>
+                <div class="flex flex-col space-y-3 py-4">
+                    <a href="#login" class="text-center text-gray-700">تسجيل الدخول</a>
+                    <a href="#register"
+                        class="bg-blue-600 text-white px-4 py-2 rounded-md hover:bg-blue-700 text-center">التسجيل</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero-section text-white py-20 md:py-32">
+        <div class="container mx-auto px-4 text-center">
+            <h1 class="text-3xl md:text-5xl font-bold mb-4">التعلم لا يعرف حدودًا</h1>
+            <p class="text-xl md:text-2xl mb-8 max-w-2xl mx-auto">انضم إلى منصة رواق للتعلم الإلكتروني وطور مهاراتك مع
+                أفضل الدورات في مختلف المجالات</p>
+            <a href="#courses"
+                class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-8 rounded-full text-lg transition duration-300 inline-block">ابدأ
+                التعلم الآن</a>
+        </div>
+    </section>
+
+    <!-- Latest Courses -->
+    <section class="py-16 bg-white" id="courses">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-2xl md:text-3xl font-bold text-gray-800">أحدث المساقات</h2>
+                <p class="text-gray-600 mt-2 max-w-2xl mx-auto">اكتشف أحدث الدورات التدريبية التي نقدمها لتطوير مهاراتك
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Course 1 -->
+                <div
+                    class="course-card bg-white rounded-lg shadow-md overflow-hidden transition duration-300 animate-fade">
+                    <div class="relative">
+                        <img src="https://placehold.co/600x400" alt="دورة تعلم أساسيات البرمجة"
+                            class="w-full h-48 object-cover">
+                        <div class="absolute top-2 right-2 bg-blue-600 text-white text-xs px-2 py-1 rounded">جديد</div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-gray-800 mb-2">أساسيات البرمجة للمبتدئين</h3>
+                        <p class="text-gray-600 mb-3">تعلم أساسيات البرمجة من الصفر حتى الاحتراف</p>
+                        <div class="flex items-center mb-4">
+                            <img src="https://placehold.co/40x40" alt="صورة المحاضر" class="w-8 h-8 rounded-full mr-2">
+                            <span class="text-sm text-gray-700">أ. محمد أحمد</span>
+                        </div>
+                        <div class="flex justify-between items-center">
+                            <span class="text-blue-600 font-medium">تبدأ: 15 يونيو</span>
+                            <a href="#"
+                                class="bg-blue-600 hover:bg-blue-700 text-white text-sm px-4 py-2 rounded">الانضمام
+                                للمادة</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Course 2 -->
+                <div class="course-card bg-white rounded-lg shadow-md overflow-hidden transition duration-300 animate-fade"
+                    style="animation-delay: 0.1s;">
+                    <div class="relative">
+                        <img src="https://placehold.co/600x400" alt="دورة تعلم اللغة الإنجليزية"
+                            class="w-full h-48 object-cover">
+                        <div class="absolute top-2 right-2 bg-green-600 text-white text-xs px-2 py-1 rounded">شهادة
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-gray-800 mb-2">الإنجليزية للمحترفين</h3>
+                        <p class="text-gray-600 mb-3">تحدث الإنجليزية بطلاقة في العمل والحياة اليومية</p>
+                        <div class="flex items-center mb-4">
+                            <img src="https://placehold.co/40x40" alt="صورة المحاضر" class="w-8 h-8 rounded-full mr-2">
+                            <span class="text-sm text-gray-700">د. سارة خالد</span>
+                        </div>
+                        <div class="flex justify-between items-center">
+                            <span class="text-blue-600 font-medium">جاري الآن</span>
+                            <a href="#"
+                                class="bg-blue-600 hover:bg-blue-700 text-white text-sm px-4 py-2 rounded">الانضمام
+                                للمادة</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Course 3 -->
+                <div class="course-card bg-white rounded-lg shadow-md overflow-hidden transition duration-300 animate-fade"
+                    style="animation-delay: 0.2s;">
+                    <div class="relative">
+                        <img src="https://placehold.co/600x400" alt="دورة تعلم الذكاء الاصطناعي"
+                            class="w-full h-48 object-cover">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-gray-800 mb-2">مقدمة في الذكاء الاصطناعي</h3>
+                        <p class="text-gray-600 mb-3">تعرف على أساسيات الذكاء الاصطناعي وتعلم الآلة</p>
+                        <div class="flex items-center mb-4">
+                            <img src="https://placehold.co/40x40" alt="صورة المحاضر" class="w-8 h-8 rounded-full mr-2">
+                            <span class="text-sm text-gray-700">د. علي محمد</span>
+                        </div>
+                        <div class="flex justify-between items-center">
+                            <span class="text-blue-600 font-medium">قريباً</span>
+                            <a href="#" class="bg-gray-300 text-gray-700 text-sm px-4 py-2 rounded">قيد الانتظار</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="text-center mt-10">
+                <a href="#all-courses"
+                    class="inline-block border-2 border-blue-600 text-blue-600 font-medium px-6 py-3 rounded hover:bg-blue-600 hover:text-white transition duration-300">تصفح
+                    جميع المساقات</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Course Categories -->
+    <section class="py-16 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-2xl md:text-3xl font-bold text-gray-800">تصنيفات المساقات</h2>
+                <p class="text-gray-600 mt-2">اختر التخصص الذي تريد التعلم فيه</p>
+            </div>
+
+            <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-6">
+                <!-- Category 1 -->
+                <a href="#"
+                    class="category-item text-center p-4 hover:bg-white hover:shadow-md rounded-lg transition duration-300">
+                    <div class="category-icon bg-blue-100 text-blue-600 mb-3">
+                        <i class="fas fa-laptop-code"></i>
+                    </div>
+                    <h3 class="font-medium text-gray-800">البرمجة</h3>
+                    <p class="text-sm text-gray-600 mt-1">15 مادة</p>
+                </a>
+
+                <!-- Category 2 -->
+                <a href="#"
+                    class="category-item text-center p-4 hover:bg-white hover:shadow-md rounded-lg transition duration-300">
+                    <div class="category-icon bg-green-100 text-green-600 mb-3">
+                        <i class="fas fa-language"></i>
+                    </div>
+                    <h3 class="font-medium text-gray-800">اللغات</h3>
+                    <p class="text-sm text-gray-600 mt-1">8 مواد</p>
+                </a>
+
+                <!-- Category 3 -->
+                <a href="#"
+                    class="category-item text-center p-4 hover:bg-white hover:shadow-md rounded-lg transition duration-300">
+                    <div class="category-icon bg-purple-100 text-purple-600 mb-3">
+                        <i class="fas fa-brain"></i>
+                    </div>
+                    <h3 class="font-medium text-gray-800">التنمية الذاتية</h3>
+                    <p class="text-sm text-gray-600 mt-1">12 مادة</p>
+                </a>
+
+                <!-- Category 4 -->
+                <a href="#"
+                    class="category-item text-center p-4 hover:bg-white hover:shadow-md rounded-lg transition duration-300">
+                    <div class="category-icon bg-red-100 text-red-600 mb-3">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <h3 class="font-medium text-gray-800">الإدارة</h3>
+                    <p class="text-sm text-gray-600 mt-1">10 مواد</p>
+                </a>
+
+                <!-- Category 5 -->
+                <a href="#"
+                    class="category-item text-center p-4 hover:bg-white hover:shadow-md rounded-lg transition duration-300">
+                    <div class="category-icon bg-yellow-100 text-yellow-600 mb-3">
+                        <i class="fas fa-school"></i>
+                    </div>
+                    <h3 class="font-medium text-gray-800">التعليم</h3>
+                    <p class="text-sm text-gray-600 mt-1">5 مواد</p>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="py-16 bg-blue-600 text-white">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+                <!-- Stat 1 -->
+                <div class="stats-item">
+                    <div class="text-4xl font-bold mb-2">50,000+</div>
+                    <p class="text-blue-100">متعلّم</p>
+                </div>
+
+                <!-- Stat 2 -->
+                <div class="stats-item">
+                    <div class="text-4xl font-bold mb-2">200+</div>
+                    <p class="text-blue-100">دورة تدريبية</p>
+                </div>
+
+                <!-- Stat 3 -->
+                <div class="stats-item">
+                    <div class="text-4xl font-bold mb-2">150+</div>
+                    <p class="text-blue-100">محاضر</p>
+                </div>
+
+                <!-- Stat 4 -->
+                <div class="stats-item">
+                    <div class="text-4xl font-bold mb-2">90%</div>
+                    <p class="text-blue-100">رضا العملاء</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-2xl md:text-3xl font-bold text-gray-800">آراء المتعلمين</h2>
+                <p class="text-gray-600 mt-2">انظر ماذا يقول طلابنا عن منصة رواق</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Testimonial 1 -->
+                <div class="testimonial-card bg-gray-50 rounded-lg p-6">
+                    <div class="flex items-center mb-4">
+                        <img src="https://placehold.co/60x60" alt="صورة المتعلم أحمد"
+                            class="w-12 h-12 rounded-full mr-4">
+                        <div>
+                            <h4 class="font-bold text-gray-800">أحمد محمد</h4>
+                            <p class="text-sm text-gray-600">طالب هندسة</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-700 mb-4">"تجربة رائعة مع رواق، ساعدتني الدورات كثيرًا في تطوير مهاراتي البرمجية
+                        والحصول على عمل في شركة مرموقة."</p>
+                    <div class="flex text-yellow-400">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                </div>
+
+                <!-- Testimonial 2 -->
+                <div class="testimonial-card bg-gray-50 rounded-lg p-6">
+                    <div class="flex items-center mb-4">
+                        <img src="https://placehold.co/60x60" alt="صورة المتعلمة نورة"
+                            class="w-12 h-12 rounded-full mr-4">
+                        <div>
+                            <h4 class="font-bold text-gray-800">نورة عبدالله</h4>
+                            <p class="text-sm text-gray-600">مدرسة</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-700 mb-4">"بفضل دورات اللغة الإنجليزية في رواق، أصبحت قادرة على التحدث بطلاقة
+                        وحصلت على ترقية في عملي."</p>
+                    <div class="flex text-yellow-400">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star-half-alt"></i>
+                    </div>
+                </div>
+
+                <!-- Testimonial 3 -->
+                <div class="testimonial-card bg-gray-50 rounded-lg p-6">
+                    <div class="flex items-center mb-4">
+                        <img src="https://placehold.co/60x60" alt="صورة المتعلم خالد"
+                            class="w-12 h-12 rounded-full mr-4">
+                        <div>
+                            <h4 class="font-bold text-gray-800">خالد سعد</h4>
+                            <p class="text-sm text-gray-600">موظف بنك</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-700 mb-4">"لم أكن أتوقع أن التعلم عبر الإنترنت قد يكون بهذه الجودة، شكرًا رواق
+                        على هذه التجربة المميزة."</p>
+                    <div class="flex text-yellow-400">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Become Instructor -->
+    <section class="pricing" id="pricing">
+        <div class="container">
+            <h2 class="section-title">اختر الباقة المناسبة لك</h2>
+
+            <div class="pricing-tabs">
+                <button class="tab-btn active" onclick="showTeacherPlans()">للمعلمين</button>
+                <button class="tab-btn" onclick="showStudentPlans()">للطلاب</button>
+            </div>
+
+            <div id="teacher-plans" class="pricing-grid">
+                <div class="pricing-card">
+                    <h3>الباقة الأساسية</h3>
+                    <div class="price">500 <span>ر.س/شهر</span></div>
+                    <ul>
+                        <li>10 فيديوهات</li>
+                        <li>20 ملف</li>
+                        <li>إحصائيات أساسية</li>
+                        <li>دعم عبر البريد الإلكتروني</li>
+                    </ul>
+                    <a href="#" class="btn">اشترك الآن</a>
+                </div>
+                <div class="pricing-card">
+                    <h3>الباقة المتوسطة</h3>
+                    <div class="price">800 <span>ر.س/شهر</span></div>
+                    <ul>
+                        <li>25 فيديو</li>
+                        <li>50 ملف</li>
+                        <li>إحصائيات متقدمة</li>
+                        <li>دعم فوري</li>
+                    </ul>
+                    <a href="#" class="btn">اشترك الآن</a>
+                </div>
+                <div class="pricing-card">
+                    <h3>الباقة المتميزة</h3>
+                    <div class="price">1200 <span>ر.س/شهر</span></div>
+                    <ul>
+                        <li>50 فيديو</li>
+                        <li>100 ملف</li>
+                        <li>إحصائيات كاملة</li>
+                        <li>دعم مميز</li>
+                    </ul>
+                    <a href="#" class="btn">اشترك الآن</a>
+                </div>
+            </div>
+
+            <div id="student-plans" class="pricing-grid" style="display: none;">
+                <div class="pricing-card">
+                    <h3>فيديو فردي</h3>
+                    <div class="price">50 <span>ر.س</span></div>
+                    <ul>
+                        <li>دخول إلى فيديو واحد</li>
+                        <li>ملف واحد شامل</li>
+                        <li>إمكانية المشاهدة لمدة شهر</li>
+                    </ul>
+                    <a href="#" class="btn">اشترك الآن</a>
+                </div>
+                <div class="pricing-card">
+                    <h3>حصة فردية</h3>
+                    <div class="price">200 <span>ر.س</span></div>
+                    <ul>
+                        <li>حصة مباشرة لمدة ساعة</li>
+                        <li>ملفات داعمة</li>
+                        <li>تسجيل الحصة</li>
+                    </ul>
+                    <a href="#" class="btn">اشترك الآن</a>
+                </div>
+                <div class="pricing-card">
+                    <h3>باقة المواد</h3>
+                    <div class="price">900 <span>ر.س</span></div>
+                    <ul>
+                        <li>10 فيديوهات في مادة واحدة</li>
+                        <li>25 ملف تعليمي</li>
+                        <li>إختبارات تقييمية</li>
+                    </ul>
+                    <a href="#" class="btn">اشترك الآن</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col md:flex-row items-center">
+                <div class="md:w-1/2 mb-8 md:mb-0">
+                    <img src="https://placehold.co/600x400" alt="عن رواق التعليمية" class="rounded-lg shadow-lg w-full">
+                </div>
+                <div class="md:w-1/2 md:pr-10">
+                    <h2 class="text-2xl md:text-3xl font-bold text-gray-800 mb-4">عن منصة رواق</h2>
+                    <p class="text-gray-700 mb-6">رواق هي منصة عربية للتعليم المفتوح تهدف إلى توفير مواد دراسية أكاديمية
+                        مجانية باللغة العربية في مختلف المجالات والتخصصات، مقدمة من نخبة من الأكاديميين والمحترفين
+                        العرب.</p>
+
+                    <div class="mb-6">
+                        <h3 class="text-xl font-bold text-gray-800 mb-3">رؤيتنا</h3>
+                        <p class="text-gray-700">أن نكون المنصة الرائدة في التعليم الإلكتروني العربي، وأن نصل بالمعرفة
+                            إلى كل طالب علم عربي.</p>
+                    </div>
+
+                    <div class="mb-6">
+                        <h3 class="text-xl font-bold text-gray-800 mb-3">رسالتنا</h3>
+                        <p class="text-gray-700">توفير تعليم عالي الجودة، مجاني ومتاح للجميع، لتمكين الأفراد وتحسين
+                            فرصهم في سوق العمل.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Blog Section -->
+    <section id="blog" class="py-16 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-2xl md:text-3xl font-bold text-gray-800">المدونة</h2>
+                <p class="text-gray-600 mt-2">آخر المقالات والنصائح التعليمية</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Blog Post 1 -->
+                <div class="bg-white rounded-lg shadow-md overflow-hidden">
+                    <img src="https://placehold.co/600x400" alt="مقال عن التعلم الإلكتروني"
+                        class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <div class="text-sm text-gray-600 mb-2">15 يونيو 2023</div>
+                        <h3 class="text-xl font-bold text-gray-800 mb-3">فوائد التعلم الإلكتروني في العصر الرقمي</h3>
+                        <p class="text-gray-700 mb-4">كيف يمكن للتعلم الإلكتروني أن يحدث ثورة في طريقة اكتسابنا للمعرفة
+                            والمهارات...</p>
+                        <a href="#" class="text-blue-600 font-medium hover:text-blue-700">اقرأ المقال →</a>
+                    </div>
+                </div>
+
+                <!-- Blog Post 2 -->
+                <div class="bg-white rounded-lg shadow-md overflow-hidden">
+                    <img src="https://placehold.co/600x400" alt="نصائح للتعلم الفعال" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <div class="text-sm text-gray-600 mb-2">5 يونيو 2023</div>
+                        <h3 class="text-xl font-bold text-gray-800 mb-3">10 نصائح للتعلم الفعال عبر الإنترنت</h3>
+                        <p class="text-gray-700 mb-4">تعرف على أفضل الاستراتيجيات لتحقيق أقصى استفادة من دوراتك
+                            التعليمية عبر الإنترنت...</p>
+                        <a href="#" class="text-blue-600 font-medium hover:text-blue-700">اقرأ المقال →</a>
+                    </div>
+                </div>
+
+                <!-- Blog Post 3 -->
+                <div class="bg-white rounded-lg shadow-md overflow-hidden">
+                    <img src="https://placehold.co/600x400" alt="مستقبل التعليم" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <div class="text-sm text-gray-600 mb-2">25 مايو 2023</div>
+                        <h3 class="text-xl font-bold text-gray-800 mb-3">مستقبل التعليم: اتجاهات وتوقعات</h3>
+                        <p class="text-gray-700 mb-4">كيف سيبدو التعليم في السنوات القادمة؟ تعرف على أحدث الاتجاهات التي
+                            ستشكل مستقبل التعليم...</p>
+                        <a href="#" class="text-blue-600 font-medium hover:text-blue-700">اقرأ المقال →</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="text-center mt-10">
+                <a href="#"
+                    class="inline-block border-2 border-blue-600 text-blue-600 font-medium px-6 py-3 rounded hover:bg-blue-600 hover:text-white transition duration-300">المزيد
+                    من المقالات</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section id="faq" class="py-16 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-2xl md:text-3xl font-bold text-gray-800">الأسئلة الشائعة</h2>
+                <p class="text-gray-600 mt-2">إجابات على أكثر الأسئلة التي نتلقاها</p>
+            </div>
+
+            <div class="max-w-3xl mx-auto">
+                <!-- FAQ Item 1 -->
+                <div class="mb-6 bg-white rounded-lg shadow-md overflow-hidden">
+                    <button
+                        class="w-full text-right p-4 focus:outline-none flex justify-between items-center faq-question">
+                        <span class="font-medium text-gray-800">كيف أبدأ في التعلم على المنصة؟</span>
+                        <i class="fas fa-chevron-down text-blue-600 transition-transform duration-300"></i>
+                    </button>
+                    <div class="faq-answer hidden px-4 pb-4">
+                        <p class="text-gray-700">يمكنك البدء بسهولة عن طريق إنشاء حساب جديد على المنصة، ثم تصفح المساقات
+                            المتاحة والانضمام إلى أي منها. معظم المواد متاحة للجميع مجانًا.</p>
+                    </div>
+                </div>
+
+                <!-- FAQ Item 2 -->
+                <div class="mb-6 bg-white rounded-lg shadow-md overflow-hidden">
+                    <button
+                        class="w-full text-right p-4 focus:outline-none flex justify-between items-center faq-question">
+                        <span class="font-medium text-gray-800">هل الشهادات معتمدة؟</span>
+                        <i class="fas fa-chevron-down text-blue-600 transition-transform duration-300"></i>
+                    </button>
+                    <div class="faq-answer hidden px-4 pb-4">
+                        <p class="text-gray-700">نعم، الشهادات التي تمنحها رواق معتمدة من عدة جهات أكاديمية وتعليمية.
+                            يمكنك إضافة شهاداتك إلى ملفك الشخصي LinkedIn أو سيرتك الذاتية.</p>
+                    </div>
+                </div>
+
+                <!-- FAQ Item 3 -->
+                <div class="mb-6 bg-white rounded-lg shadow-md overflow-hidden">
+                    <button
+                        class="w-full text-right p-4 focus:outline-none flex justify-between items-center faq-question">
+                        <span class="font-medium text-gray-800">هل أحتاج للدفع لأي من المواد؟</span>
+                        <i class="fas fa-chevron-down text-blue-600 transition-transform duration-300"></i>
+                    </button>
+                    <div class="faq-answer hidden px-4 pb-4">
+                        <p class="text-gray-700">جميع المواد الأساسية على رواق مجانية بالكامل. قد تكون هناك بعض البرامج
+                            المميزة أو الشهادات الاختيالية برسوم رمزية.</p>
+                    </div>
+                </div>
+
+                <!-- FAQ Item 4 -->
+                <div class="mb-6 bg-white rounded-lg shadow-md overflow-hidden">
+                    <button
+                        class="w-full text-right p-4 focus:outline-none flex justify-between items-center faq-question">
+                        <span class="font-medium text-gray-800">كيف يمكنني التواصل مع المحاضرين؟</span>
+                        <i class="fas fa-chevron-down text-blue-600 transition-transform duration-300"></i>
+                    </button>
+                    <div class="faq-answer hidden px-4 pb-4">
+                        <p class="text-gray-700">يمكنك التواصل مع المحاضرين من خلال المنتدى الخاص بكل مادة، حيث يمكنك
+                            طرح الأسئلة وستحصل على إجابات من المحاضر أو مساعديه.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Login Modal -->
+    <div id="login-modal" class="fixed inset-0 bg-gray-600 bg-opacity-50 flex items-center justify-center hidden z-50">
+        <div class="bg-white rounded-lg shadow-xl max-w-md w-full p-6 mx-4">
+            <div class="flex justify-between items-center mb-6">
+                <h3 class="text-xl font-bold text-gray-800">تسجيل الدخول</h3>
+                <button id="close-login-modal" class="text-gray-600 hover:text-gray-800">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+
+            <form>
+                <div class="mb-4">
+                    <label for="login-email" class="block text-gray-700 mb-2">البريد الإلكتروني</label>
+                    <input type="email" id="login-email"
+                        class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-600">
+                </div>
+                <div class="mb-6">
+                    <label for="login-password" class="block text-gray-700 mb-2">كلمة المرور</label>
+                    <input type="password" id="login-password"
+                        class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-600">
+                </div>
+                <button type="submit"
+                    class="w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-4 rounded-lg mb-4">تسجيل
+                    الدخول</button>
+
+                <div class="text-center">
+                    <a href="#" class="text-blue-600 hover:text-blue-700 text-sm">نسيت كلمة المرور؟</a>
+                </div>
+
+                <div class="flex items-center my-6">
+                    <div class="flex-1 border-t border-gray-300"></div>
+                    <span class="px-3 text-gray-600">أو</span>
+                    <div class="flex-1 border-t border-gray-300"></div>
+                </div>
+
+                <div class="flex space-x-4 space-x-reverse">
+                    <a href="#"
+                        class="flex-1 bg-gray-100 hover:bg-gray-200 text-gray-800 font-medium py-2 px-4 rounded-lg text-center flex items-center justify-center">
+                        <i class="fab fa-google text-red-500 mr-2"></i>
+                        Google
+                    </a>
+                    <a href="#"
+                        class="flex-1 bg-gray-100 hover:bg-gray-200 text-gray-800 font-medium py-2 px-4 rounded-lg text-center flex items-center justify-center">
+                        <i class="fab fa-facebook-f text-blue-600 mr-2"></i>
+                        Facebook
+                    </a>
+                </div>
+
+                <div class="text-center mt-6">
+                    <span class="text-gray-600">ليس لديك حساب؟</span>
+                    <a href="#register" class="text-blue-600 hover:text-blue-700 font-medium">إنشاء حساب جديد</a>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Register Modal -->
+    <div id="register-modal"
+        class="fixed inset-0 bg-gray-600 bg-opacity-50 flex items-center justify-center hidden z-50">
+        <div class="bg-white rounded-lg shadow-xl max-w-md w-full p-6 mx-4">
+            <div class="flex justify-between items-center mb-6">
+                <h3 class="text-xl font-bold text-gray-800">إنشاء حساب جديد</h3>
+                <button id="close-register-modal" class="text-gray-600 hover:text-gray-800">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+
+            <form>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
+                    <div>
+                        <label for="register-firstname" class="block text-gray-700 mb-2">الاسم الأول</label>
+                        <input type="text" id="register-firstname"
+                            class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-600">
+                    </div>
+                    <div>
+                        <label for="register-lastname" class="block text-gray-700 mb-2">الاسم الأخير</label>
+                        <input type="text" id="register-lastname"
+                            class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-600">
+                    </div>
+                </div>
+
+                <div class="mb-4">
+                    <label for="register-email" class="block text-gray-700 mb-2">البريد الإلكتروني</label>
+                    <input type="email" id="register-email"
+                        class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-600">
+                </div>
+
+                <div class="mb-4">
+                    <label for="register-password" class="block text-gray-700 mb-2">كلمة المرور</label>
+                    <input type="password" id="register-password"
+                        class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-600">
+                </div>
+
+                <div class="mb-6">
+                    <label for="register-confirm-password" class="block text-gray-700 mb-2">تأكيد كلمة المرور</label>
+                    <input type="password" id="register-confirm-password"
+                        class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-600">
+                </div>
+
+                <button type="submit"
+                    class="w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-4 rounded-lg mb-4">إنشاء
+                    الحساب</button>
+
+                <div class="flex items-center my-6">
+                    <div class="flex-1 border-t border-gray-300"></div>
+                    <span class="px-3 text-gray-600">أو</span>
+                    <div class="flex-1 border-t border-gray-300"></div>
+                </div>
+
+                <div class="flex space-x-4 space-x-reverse">
+                    <a href="#"
+                        class="flex-1 bg-gray-100 hover:bg-gray-200 text-gray-800 font-medium py-2 px-4 rounded-lg text-center flex items-center justify-center">
+                        <i class="fab fa-google text-red-500 mr-2"></i>
+                        Google
+                    </a>
+                    <a href="#"
+                        class="flex-1 bg-gray-100 hover:bg-gray-200 text-gray-800 font-medium py-2 px-4 rounded-lg text-center flex items-center justify-center">
+                        <i class="fab fa-facebook-f text-blue-600 mr-2"></i>
+                        Facebook
+                    </a>
+                </div>
+
+                <div class="text-center mt-6">
+                    <span class="text-gray-600">لديك حساب بالفعل؟</span>
+                    <a href="#login" class="text-blue-600 hover:text-blue-700 font-medium">تسجيل الدخول</a>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-12">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div>
+                    <h3 class="text-xl font-bold mb-4 flex items-center">
+                        <img src="https://placehold.co/30x30" alt="شعار رواق" class="h-6 w-6 mr-2">
+                        رواق
+                    </h3>
+                    <p class="text-gray-400">منصة التعلم الإلكتروني الرائدة في العالم العربي، تقدم دورات مجانية في مختلف
+                        التخصصات.</p>
+                </div>
+
+                <div>
+                    <h4 class="font-bold mb-4">روابط سريعة</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#about" class="text-gray-400 hover:text-white">عن رواق</a></li>
+                        <li><a href="#courses" class="text-gray-400 hover:text-white">المساقات</a></li>
+                        <li><a href="#blog" class="text-gray-400 hover:text-white">المدونة</a></li>
+                        <li><a href="#partners" class="text-gray-400 hover:text-white">الشراكات</a></li>
+                        <li><a href="#faq" class="text-gray-400 hover:text-white">الأسئلة الشائعة</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="font-bold mb-4">التواصل معنا</h4>
+                    <ul class="space-y-2 text-gray-400">
+                        <li class="flex items-start">
+                            <i class="fas fa-envelope mt-1 mr-2"></i>
+                            <span>info@riwaq.edu</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-phone-alt mt-1 mr-2"></i>
+                            <span>+966 12 345 6789</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-map-marker-alt mt-1 mr-2"></i>
+                            <span>الرياض، المملكة العربية السعودية</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="font-bold mb-4">تابعنا</h4>
+                    <div class="flex space-x-4 space-x-reverse">
+                        <a href="#"
+                            class="w-10 h-10 rounded-full bg-gray-700 flex items-center justify-center hover:bg-blue-600">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="#"
+                            class="w-10 h-10 rounded-full bg-gray-700 flex items-center justify-center hover:bg-blue-700">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="#"
+                            class="w-10 h-10 rounded-full bg-gray-700 flex items-center justify-center hover:bg-red-600">
+                            <i class="fab fa-youtube"></i>
+                        </a>
+                        <a href="#"
+                            class="w-10 h-10 rounded-full bg-gray-700 flex items-center justify-center hover:bg-purple-600">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                    </div>
+
+                    <h4 class="font-bold mt-6 mb-2">اشترك في النشرة البريدية</h4>
+                    <form class="flex">
+                        <input type="email" placeholder="بريدك الإلكتروني"
+                            class="px-4 py-2 w-full rounded-r-lg focus:outline-none text-gray-800">
+                        <button type="submit" class="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-l-lg">
+                            <i class="fas fa-paper-plane"></i>
+                        </button>
+                    </form>
+                </div>
+            </div>
+
+            <div class="border-t border-gray-700 mt-10 pt-6 flex flex-col md:flex-row justify-between items-center">
+                <p class="text-gray-400 text-sm mb-4 md:mb-0">© 2023 رواق. جميع الحقوق محفوظة.</p>
+                <div class="flex space-x-6 space-x-reverse">
+                    <a href="#" class="text-gray-400 hover:text-white text-sm">شروط الاستخدام</a>
+                    <a href="#" class="text-gray-400 hover:text-white text-sm">سياسة الخصوصية</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Font Awesome Icons -->
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+
+    <script>
+        function showTeacherPlans() {
+            document.getElementById('teacher-plans').style.display = 'grid';
+            document.getElementById('student-plans').style.display = 'none';
+
+            const tabs = document.querySelectorAll('.tab-btn');
+            tabs[0].classList.add('active');
+            tabs[1].classList.remove('active');
+        }
+
+        function showStudentPlans() {
+            document.getElementById('teacher-plans').style.display = 'none';
+            document.getElementById('student-plans').style.display = 'grid';
+
+            const tabs = document.querySelectorAll('.tab-btn');
+            tabs[0].classList.remove('active');
+            tabs[1].classList.add('active');
+        }
+    </script>
+    <!-- JavaScript for interactive elements -->
+    <script>
+        // Mobile Menu Toggle
+        document.getElementById('menu-toggle').addEventListener('click', function () {
+            const menu = document.getElementById('mobile-menu');
+            menu.classList.toggle('hidden');
+        });
+
+        // FAQ Accordion
+        const faqQuestions = document.querySelectorAll('.faq-question');
+        faqQuestions.forEach(question => {
+            question.addEventListener('click', () => {
+                const answer = question.nextElementSibling;
+                const icon = question.querySelector('i');
+
+                // Toggle answer visibility
+                answer.classList.toggle('hidden');
+
+                // Rotate icon
+                if (answer.classList.contains('hidden')) {
+                    icon.style.transform = 'rotate(0deg)';
+                } else {
+                    icon.style.transform = 'rotate(180deg)';
+                }
+
+                // Close other open FAQs
+                faqQuestions.forEach(q => {
+                    if (q !== question) {
+                        q.nextElementSibling.classList.add('hidden');
+                        q.querySelector('i').style.transform = 'rotate(0deg)';
+                    }
+                });
+            });
+        });
+
+        // Login Modal
+        const loginModal = document.getElementById('login-modal');
+        const closeLoginModal = document.getElementById('close-login-modal');
+
+        // Open login modal when clicking login links
+        document.querySelectorAll('[href="#login"]').forEach(link => {
+            link.addEventListener('click', function (e) {
+                e.preventDefault();
+                loginModal.classList.remove('hidden');
+            });
+        });
+
+        // Close login modal
+        closeLoginModal.addEventListener('click', function () {
+            loginModal.classList.add('hidden');
+        });
+
+        // Close modal when clicking outside
+        loginModal.addEventListener('click', function (e) {
+            if (e.target === loginModal) {
+                loginModal.classList.add('hidden');
+            }
+        });
+
+        // Register Modal
+        const registerModal = document.getElementById('register-modal');
+        const closeRegisterModal = document.getElementById('close-register-modal');
+
+        // Open register modal when clicking register links
+        document.querySelectorAll('[href="#register"]').forEach(link => {
+            link.addEventListener('click', function (e) {
+                e.preventDefault();
+                registerModal.classList.remove('hidden');
+            });
+        });
+
+        // Close register modal
+        closeRegisterModal.addEventListener('click', function () {
+            registerModal.classList.add('hidden');
+        });
+
+        // Close modal when clicking outside
+        registerModal.addEventListener('click', function (e) {
+            if (e.target === registerModal) {
+                registerModal.classList.add('hidden');
+            }
+        });
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                if (this.getAttribute('href') === '#login' || this.getAttribute('href') === '#register') {
+                    return;
+                }
+
+                e.preventDefault();
+
+                const targetId = this.getAttribute('href');
+                const targetElement = document.querySelector(targetId);
+
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+
+                    // Close mobile menu if open
+                    const mobileMenu = document.getElementById('mobile-menu');
+                    if (!mobileMenu.classList.contains('hidden')) {
+                        mobileMenu.classList.add('hidden');
+                    }
+                }
+            });
+        });
+
+        // Animate stats on scroll
+        function animateStats() {
+            const statsSection = document.querySelector('section.bg-blue-600');
+            if (isInViewport(statsSection)) {
+                const statsItems = document.querySelectorAll('.stats-item');
+
+                statsItems.forEach((item, index) => {
+                    setTimeout(() => {
+                        item.classList.add('animate-pulse');
+                    }, index * 200);
+                });
+
+                // Remove event listener after animation plays
+                window.removeEventListener('scroll', animateStats);
+            }
+        }
+
+        function isInViewport(element) {
+            const rect = element.getBoundingClientRect();
+            return (
+                rect.top <= (window.innerHeight || document.documentElement.clientHeight)
+            );
+        }
+
+        window.addEventListener('scroll', animateStats);
+
+        // Initialize animation when page loads if stats are already in view
+        document.addEventListener('DOMContentLoaded', function () {
+            animateStats();
+
+            // Add animation to course cards on page load
+            const courseCards = document.querySelectorAll('.course-card');
+            courseCards.forEach((card, index) => {
+                setTimeout(() => {
+                    card.style.opacity = '1';
+                }, index * 100);
+            });
+        });
+    </script>
+</body>
+
+</html>

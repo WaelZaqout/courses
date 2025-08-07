@@ -1,0 +1,681 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>منصة تعليمية</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700&display=swap" rel="stylesheet">
+    <!-- <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script> -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+
+</head>
+
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="nav-container">
+            <div class="logo">منصتي</div>
+            <div class="nav-links">
+                <div class="dropdown">
+                    <button class="dropbtn">الاقسام <i class="fas fa-chevron-down"></i></button>
+                    <div class="dropdown-content">
+                        <a href="#math">الرياضيات</a>
+                        <a href="#science">العلوم</a>
+                        <a href="#arabic">اللغة العربية</a>
+                        <a href="#english">اللغة الإنجليزية</a>
+                        <a href="#coding">البرمجة</a>
+                        <a href="#design">التصميم</a>
+                        <a href="#business">الادارة وريادة الأعمال</a>
+                        <a href="#music">الموسيقى والفن</a>
+                        <a href="#health">الصحة واللياقة</a>
+                        <a href="#marketing">التسويق الرقمي</a>
+                    </div>
+                </div>
+                <a href="#courses">الدورات</a>
+                <a href="#about">من نحن</a>
+                <a href="#pricing">الاشتراكات</a>
+                <button onclick="openLoginModal()" class="login-btn">تسجيل الدخول</button>
+            </div>
+            <!-- زر الهامبرغر داخل الناف -->
+            <button class="hamburger" onclick="toggleMobileMenu()">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+    </nav>
+    <!-- قائمة الموبايل الجانبية خارج الناف -->
+    <div id="mobileMenu" class="mobile-menu">
+        <button class="close-mobile-menu" onclick="closeMobileMenu()">&times;</button>
+        <div class="dropdown">
+            <button class="dropbtn">الاقسام <i class="fas fa-chevron-down"></i></button>
+            <div class="dropdown-content">
+                <a href="#math">الرياضيات</a>
+                <a href="#science">العلوم</a>
+                <a href="#arabic">اللغة العربية</a>
+                <a href="#english">اللغة الإنجليزية</a>
+                <a href="#coding">البرمجة</a>
+                <a href="#design">التصميم</a>
+                <a href="#business">الادارة وريادة الأعمال</a>
+                <a href="#music">الموسيقى والفن</a>
+                <a href="#health">الصحة واللياقة</a>
+                <a href="#marketing">التسويق الرقمي</a>
+            </div>
+        </div>
+        <a href="#courses">الدورات</a>
+        <a href="#about">من نحن</a>
+        <a href="#pricing">الاشتراكات</a>
+        <button onclick="openLoginModal()" class="login-btn">تسجيل الدخول</button>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-container">
+            <div class="hero-content">
+                <h1>تعلم بأفضل الطرق مع منصتي</h1>
+                <p>افتح عالمًا من المعرفة مع دوراتنا التعليمية المتميزة، مصممة خصيصًا لتلبية احتياجات الطلاب والمعلمين.
+                </p>
+                <div class="hero-buttons">
+                    <button onclick="openStudentModal()" class="btn-primary highlight">سجل الآن</button>
+                    <button class="btn-secondary">تصفح المقررات</button>
+                    <button class="btn-video" id="openVideoBtn"><i class="fas fa-play"></i> شاهد الفيديو
+                        التعريفي</button>
+
+                </div>
+            </div>
+            <div class="hero-image">
+                <img src="img/aboutus.jpg" alt="فريق العمل الجماعي">
+                <div class="stats-badge">
+                    <div class="stats-number">15K+</div>
+                    <div>
+                        <div class="stats-text">طلاب</div>
+                        <div class="stats-text">مسجلين</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Categories Section -->
+    <section id="categories" class="categories">
+        <div class="categories-container">
+            <div class="categories-header">
+                <h2>الاقسام التعليمية</h2>
+                <p>تصفح الدروس حسب التخصص الذي يهمك</p>
+            </div>
+            <div class="categories-list">
+                <!-- مثال: ترتيب ديناميكي (يمكنك لاحقًا ربطه بقاعدة بيانات) -->
+                <div class="category-item popular">
+                    <div class="category-icon"><i class="fas fa-calculator"></i></div>
+                    <div class="category-name">الرياضيات</div>
+                </div>
+                <div class="category-item">
+                    <div class="category-icon"><i class="fas fa-laptop-code"></i></div>
+                    <div class="category-name">البرمجة</div>
+                </div>
+                <div class="category-item">
+                    <div class="category-icon"><i class="fas fa-flask"></i></div>
+                    <div class="category-name">العلوم</div>
+                </div>
+                <div class="category-item">
+                    <div class="category-icon"><i class="fas fa-language"></i></div>
+                    <div class="category-name">اللغة العربية</div>
+                </div>
+                <div class="category-item">
+                    <div class="category-icon"><i class="fas fa-globe"></i></div>
+                    <div class="category-name">اللغة الإنجليزية</div>
+                </div>
+                <div class="category-item">
+                    <div class="category-icon"><i class="fas fa-paint-brush"></i></div>
+                    <div class="category-name">التصميم</div>
+                </div>
+                <div class="category-item">
+                    <div class="category-icon"><i class="fas fa-book"></i></div>
+                    <div class="category-name">الادارة وريادة الأعمال</div>
+                </div>
+                <div class="category-item">
+                    <div class="category-icon"><i class="fas fa-music"></i></div>
+                    <div class="category-name">الموسيقى والفن</div>
+                </div>
+                <div class="category-item">
+                    <div class="category-icon"><i class="fas fa-heart"></i></div>
+                    <div class="category-name">الصحة واللياقة</div>
+                </div>
+                <div class="category-item">
+                    <div class="category-icon"><i class="fas fa-chart-line"></i></div>
+                    <div class="category-name">التسويق الرقمي</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Courses Section -->
+    <section id="courses" class="courses">
+        <div class="section-header">
+            <h2>أحدث الدروس التعليمية</h2>
+            <p>استكشف مجموعة واسعة من الدروس المصممة لتناسب جميع المستويات</p>
+        </div>
+        <div class="courses-grid">
+            <!-- Course 1 -->
+            <div class="course-card best-seller">
+                <span class="course-badge">الأكثر مبيعًا</span>
+                <img src="img/algebra.jpg" alt="الرياضيات" class="course-image">
+                <div class="course-content">
+                    <div class="course-tags">
+                        <div class="course-tag">رياضيات</div>
+                        <div class="course-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star-half-alt"></i>
+                            <span class="course-enrolled">1200 مسجل</span>
+                        </div>
+                    </div>
+                    <h3 class="course-title">الجبر الأساسي للمبتدئين</h3>
+                    <p class="course-description">تعلم أساسيات الجبر من الصفر مع أمثلة عملية وتمارين تفاعلية.</p>
+                    <div class="course-info">
+                        <div><i class="fas fa-play-circle"></i> 12 درس</div>
+                        <div><i class="fas fa-clock"></i> 8 ساعات</div>
+                    </div>
+                    <div class="course-footer">
+                        <div class="course-price">99<span>ر.س</span></div>
+                        <a href="courses.html" class="course-btn">مشاهدة الكورس</a>
+
+                    </div>
+                </div>
+            </div>
+            <!-- Course 2 -->
+            <div class="course-card new-course">
+                <span class="course-badge">جديد</span>
+                <img src="img/algebra.jpg" alt="اللغة الإنجليزية" class="course-image">
+                <div class="course-content">
+                    <div class="course-tags">
+                        <div class="course-tag">لغة إنجليزية</div>
+                        <div class="course-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="far fa-star"></i>
+                            <span class="course-enrolled">800 مسجل</span>
+                        </div>
+                    </div>
+                    <h3 class="course-title">التحدث بطلاقة في 30 يومًا</h3>
+                    <p class="course-description">برنامج مكثف لتحسين مهارات التحدث والفهم والاستماع.</p>
+                    <div class="course-info">
+                        <div><i class="fas fa-play-circle"></i> 15 درس</div>
+                        <div><i class="fas fa-clock"></i> 10 ساعات</div>
+                    </div>
+                    <div class="course-footer">
+                        <div class="course-price">149<span>ر.س</span></div>
+                        <a href="courses.html" class="course-btn">مشاهدة الكورس</a>
+
+                    </div>
+                </div>
+            </div>
+            <!-- Course 3 -->
+            <div class="course-card">
+                <img src="img/algebra.jpg" alt="البرمجة" class="course-image">
+                <div class="course-content">
+                    <div class="course-tags">
+                        <div class="course-tag">برمجة</div>
+                        <div class="course-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <span class="course-enrolled">950 مسجل</span>
+                        </div>
+                    </div>
+                    <h3 class="course-title">تطوير الويب من الصفر</h3>
+                    <p class="course-description">تعلم HTML, CSS, JavaScript وبناء مواقع ويب احترافية.</p>
+                    <div class="course-info">
+                        <div><i class="fas fa-play-circle"></i> 25 درس</div>
+                        <div><i class="fas fa-clock"></i> 20 ساعة</div>
+                    </div>
+                    <div class="course-footer">
+                        <div class="course-price">199<span>ر.س</span></div>
+                        <a href="courses.html" class="course-btn">شاهد الكورس</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="more-courses-btn-wrapper">
+            <button class="more-courses-btn">عرض المزيد من المقررات</button>
+        </div>
+    </section>
+
+    <!-- About Us Section -->
+    <section id="about" class="about">
+        <div class="about-container">
+            <div class="about-content">
+                <h2>من نحن؟</h2>
+                <p>نحن فريق من المتخصصين في التعليم الرقمي، نؤمن بأن المعرفة يجب أن تكون في متناول الجميع. منصتنا تجمع
+                    بين أفضل المعلمين والطلاب في بيئة تعليمية متكاملة.</p>
+                <p>هدفنا هو تبسيط عملية التعلم وجعلها أكثر تفاعلية وفعالية، مع تقديم محتوى عالي الجودة يلبي احتياجات سوق
+                    العمل الحديث.</p>
+                <div class="stats-grid">
+                    <div>
+                        <div class="stat">10+</div>
+                        <div class="stat-text">سنوات خبرة</div>
+                    </div>
+                    <div>
+                        <div class="stat">500+</div>
+                        <div class="stat-text">معلم</div>
+                    </div>
+                    <div>
+                        <div class="stat">15K+</div>
+                        <div class="stat-text">طلاب</div>
+                    </div>
+                </div>
+            </div>
+            <div class="about-image">
+                <img src="img/hero.jpg" alt="فريق العمل الجماعي">
+            </div>
+        </div>
+    </section>
+
+    <!-- Subscription pricing Section -->
+    <section class="pricing" id="pricing">
+        <div class="container">
+            <h2>ابدأ مجانًا، وارتقِ بخطوات نحو الاحتراف!</h2>
+            <div class="pricing-tabs">
+                <button class="tab-btn active" onclick="showTeacherPlans()">للمعلمين</button>
+                <button class="tab-btn" onclick="showStudentPlans()">للطلاب</button>
+            </div>
+            <div id="teacher-plans" class="pricing-grid">
+                <div class="pricing-card recommended">
+                    <span class="recommended-badge">مقترحة</span>
+                    <h3>الباقة الأساسية</h3>
+                    <div class="price">500 <span>ر.س/شهر</span></div>
+                    <ul>
+                        <li>10 فيديوهات</li>
+                        <li>20 ملف</li>
+                        <li>إحصائيات أساسية</li>
+                        <li>دعم عبر البريد الإلكتروني</li>
+                    </ul>
+                    <button class="subscribe-btn">اشترك الآن</button>
+                </div>
+                <div class="pricing-card">
+                    <h3>الباقة المتوسطة</h3>
+                    <div class="price">800 <span>ر.س/شهر</span></div>
+                    <ul>
+                        <li>25 فيديو</li>
+                        <li>50 ملف</li>
+                        <li>إحصائيات متقدمة</li>
+                        <li>دعم فوري</li>
+                    </ul>
+                    <button class="subscribe-btn">اشترك الآن</button>
+                </div>
+                <div class="pricing-card">
+                    <h3>الباقة المتميزة</h3>
+                    <div class="price">1200 <span>ر.س/شهر</span></div>
+                    <ul>
+                        <li>50 فيديو</li>
+                        <li>100 ملف</li>
+                        <li>إحصائيات كاملة</li>
+                        <li>دعم مميز</li>
+                    </ul>
+                    <button class="subscribe-btn">اشترك الآن</button>
+                </div>
+            </div>
+            <div id="student-plans" class="pricing-grid" style="display: none;">
+                <div class="pricing-card">
+                    <h3>فيديو فردي</h3>
+                    <div class="price">50 <span>ر.س</span></div>
+                    <ul>
+                        <li>دخول إلى فيديو واحد</li>
+                        <li>ملف واحد شامل</li>
+                        <li>إمكانية المشاهدة لمدة شهر</li>
+                    </ul>
+                    <button class="subscribe-btn">اشترك الآن</button>
+                </div>
+                <div class="pricing-card">
+                    <h3>حصة فردية</h3>
+                    <div class="price">200 <span>ر.س</span></div>
+                    <ul>
+                        <li>حصة مباشرة لمدة ساعة</li>
+                        <li>ملفات داعمة</li>
+                        <li>تسجيل الحصة</li>
+                    </ul>
+                    <button class="subscribe-btn">اشترك الآن</button>
+                </div>
+                <div class="pricing-card">
+                    <h3>باقة المواد</h3>
+                    <div class="price">900 <span>ر.س</span></div>
+                    <ul>
+                        <li>10 فيديوهات في مادة واحدة</li>
+                        <li>25 ملف تعليمي</li>
+                        <li>إختبارات تقييمية</li>
+                    </ul>
+                    <button class="subscribe-btn">اشترك الآن</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="testimonials">
+        <div class="section-header">
+            <h2>آراء المستخدمين</h2>
+            <p>ما يقوله معلمينا وطلابنا عن منصتنا</p>
+        </div>
+        <div class="testimonials-container">
+            <div class="testimonial-card">
+                <div class="testimonial-header">
+                    <img src="img/teacher.jpg" class="testimonial-avatar-img" alt="أحمد محمد">
+                    <div>
+                        <div class="testimonial-name">أحمد محمد</div>
+                        <div class="testimonial-role">معلم رياضيات</div>
+                    </div>
+                </div>
+                <p class="testimonial-text">"المنصة ساعدتني في بناء مجتمعي التعليمي وتحقيق دخل جيد من محتواي. النظام سهل
+                    الاستخدام والدعم الفني ممتاز."</p>
+                <div class="testimonial-rating">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                </div>
+            </div>
+            <div class="testimonial-card">
+                <div class="testimonial-header">
+                    <img src="img/teacher.jpg" class="testimonial-avatar-img" alt="سارة خالد">
+                    <div>
+                        <div class="testimonial-name">سارة خالد</div>
+                        <div class="testimonial-role">طالبة جامعية</div>
+                    </div>
+                </div>
+                <p class="testimonial-text">"أحب النظام المرن في الدفع. أستطيع شراء الدروس التي أحتاجها فقط دون التزام
+                    بدورات كاملة. الجودة عالية جدًا."</p>
+                <div class="testimonial-rating">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                </div>
+            </div>
+            <div class="testimonial-card">
+                <div class="testimonial-header">
+                    <img src="img/teacher.jpg" class="testimonial-avatar-img" alt="محمد عبدالله">
+                    <div>
+                        <div class="testimonial-name">محمد عبدالله</div>
+                        <div class="testimonial-role">معلم لغة إنجليزية</div>
+                    </div>
+                </div>
+                <p class="testimonial-text">"الإحصائيات والتحليلات المتقدمة في الباقة الاحترافية ساعدتني في تحسين محتواي
+                    بناءً على تفاعل الطلاب."</p>
+                <div class="testimonial-rating">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-container">
+            <div class="footer-column">
+                <h3>منصتي</h3>
+                <p>منصة تعليمية متكاملة تربط بين المعلمين والطلاب بطريقة مبتكرة وفعالة.</p>
+                <div class="social-links">
+                    <a href="#" class="facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" class="twitter"><i class="fab fa-twitter"></i></a>
+                    <a href="#" class="instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="#" class="youtube"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+            <div class="footer-column">
+                <h3>روابط سريعة</h3>
+                <ul class="footer-links">
+                    <li><a href="#courses">الدورات</a></li>
+                    <li><a href="#why-us">لماذا نحن؟</a></li>
+                    <li><a href="#about">من نحن</a></li>
+                    <li><a href="#plans">الاشتراكات</a></li>
+                    <li><a href="#">سياسة الخصوصية</a></li>
+                    <li><a href="#">اتفاقية الاستخدام</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h3>الدعم</h3>
+                <ul class="footer-links">
+                    <li><a href="#">الأسئلة الشائعة</a></li>
+                    <li><a href="#">تواصل معنا</a></li>
+                    <li><a href="#">الخصوصية</a></li>
+                    <li><a href="#">الشروط والأحكام</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h3>اتصل بنا</h3>
+                <ul class="footer-contact">
+                    <li><i class="fas fa-envelope"></i> support@madrasa.com</li>
+                    <li><i class="fas fa-phone"></i> 920000000</li>
+                    <li><i class="fas fa-map-marker-alt"></i> الرياض، المملكة العربية السعودية</li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 منصتي. جميع الحقوق محفوظة.</p>
+        </div>
+    </footer>
+
+    <!-- Modals -->
+    <!-- Login Modal -->
+    <div id="loginModal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal" onclick="closeModal('loginModal')">&times;</span>
+            <h3 class="modal-title">تسجيل الدخول</h3>
+            <div class="form-group">
+                <label>البريد الإلكتروني</label>
+                <input type="email" class="form-control" placeholder="أدخل بريدك الإلكتروني">
+            </div>
+            <div class="form-group">
+                <label>كلمة المرور</label>
+                <input type="password" class="form-control" placeholder="أدخل كلمة المرور">
+            </div>
+            <div class="form-check">
+                <input type="checkbox" id="remember">
+                <label for="remember">تذكرني</label>
+            </div>
+            <button class="modal-btn">تسجيل الدخول</button>
+            <p class="modal-link">ليس لديك حساب؟ <a href="#" onclick="openSignupModal()">انشئ حساب</a></p>
+        </div>
+    </div>
+
+    <!-- Teacher Modal -->
+    <div id="teacherModal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal" onclick="closeModal('teacherModal')">&times;</span>
+            <h3 class="modal-title">أنا معلم</h3>
+            <p style="text-align: center; margin-bottom: 24px;">أنشئ محتواك التعليمي وحقق دخلًا من مشاركته مع الطلاب.
+            </p>
+            <button onclick="openSignupModal('معلم')" class="modal-btn">إنشاء حساب كمعلم</button>
+            <button onclick="openLoginModal()" class="modal-btn"
+                style="background: white; color: #4f46e5; border: 2px solid #4f46e5;">تسجيل الدخول</button>
+        </div>
+    </div>
+
+    <!-- Student Modal -->
+    <div id="studentModal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal" onclick="closeModal('studentModal')">&times;</span>
+            <h3 class="modal-title">أنا طالب</h3>
+            <p style="text-align: center; margin-bottom: 24px;">تعلم من أفضل المعلمين واختر الدروس التي تناسب احتياجاتك.
+            </p>
+            <button onclick="openSignupModal('طالب')" class="modal-btn">إنشاء حساب كطالب</button>
+            <button onclick="openLoginModal()" class="modal-btn"
+                style="background: white; color: #4f46e5; border: 2px solid #4f46e5;">تسجيل الدخول</button>
+        </div>
+    </div>
+    <!-- video Modal -->
+
+    <div id="videoModal" class="modalVideo">
+        <div class="modalVideo-content">
+            <span id="closeModal" class="close">&times;</span>
+            <iframe id="videoFrame" width="560" height="315" src="" frameborder="0" allow="autoplay; encrypted-media"
+                allowfullscreen>
+            </iframe>
+
+
+        </div>
+    </div>
+    <!-- Signup Modal -->
+    <div id="signupModal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal" onclick="closeModal('signupModal')">&times;</span>
+            <h3 class="modal-title">إنشاء حساب</h3>
+            <div class="form-group">
+                <label>الاسم الكامل</label>
+                <input type="text" class="form-control" placeholder="أدخل اسمك الكامل">
+            </div>
+            <div class="form-group">
+                <label>البريد الإلكتروني</label>
+                <input type="email" class="form-control" placeholder="أدخل بريدك الإلكتروني">
+            </div>
+            <div class="form-group">
+                <label>كلمة المرور</label>
+                <input type="password" class="form-control" placeholder="أدخل كلمة المرور">
+            </div>
+            <div class="form-group">
+                <label>تأكيد كلمة المرور</label>
+                <input type="password" class="form-control" placeholder="أعد إدخال كلمة المرور">
+            </div>
+            <div class="form-group">
+                <label>نوع الحساب</label>
+                <select id="accountType" class="form-control">
+                    <option value="طالب">طالب</option>
+                    <option value="معلم">معلم</option>
+                </select>
+            </div>
+            <button class="modal-btn">إنشاء الحساب</button>
+            <p class="modal-link">لديك حساب بالفعل؟ <a href="#" onclick="openLoginModal()">تسجيل الدخول</a></p>
+        </div>
+    </div>
+    <script>
+        function showTeacherPlans() {
+            document.getElementById('teacher-plans').style.display = 'grid';
+            document.getElementById('student-plans').style.display = 'none';
+
+            const tabs = document.querySelectorAll('.tab-btn');
+            tabs[0].classList.add('active');
+            tabs[1].classList.remove('active');
+        }
+
+        function showStudentPlans() {
+            document.getElementById('teacher-plans').style.display = 'none';
+            document.getElementById('student-plans').style.display = 'grid';
+
+            const tabs = document.querySelectorAll('.tab-btn');
+            tabs[0].classList.remove('active');
+            tabs[1].classList.add('active');
+        }
+    </script>
+    <script>
+        // Modal functions
+        function openLoginModal() {
+            document.getElementById('loginModal').classList.add('active');
+        }
+
+        function openTeacherModal() {
+            document.getElementById('teacherModal').classList.add('active');
+        }
+
+        function openStudentModal() {
+            document.getElementById('studentModal').classList.add('active');
+        }
+
+        function openSignupModal(type = null) {
+            document.getElementById('signupModal').classList.add('active');
+            if (type) {
+                document.getElementById('accountType').value = type;
+            }
+        }
+
+        function closeModal(modalId) {
+            document.getElementById(modalId).classList.remove('active');
+        }
+
+        // Close modals when clicking outside
+        document.querySelectorAll('.modal').forEach(modal => {
+            modal.addEventListener('click', function (e) {
+                if (e.target === this) {
+                    this.classList.remove('active');
+                }
+            });
+        });
+
+    </script>
+    <script>
+        // ...existing code...
+
+        // إغلاق المودال عند الضغط على زر Escape
+        window.addEventListener('keydown', function (e) {
+            if (e.key === "Escape") {
+                document.querySelectorAll('.modal.active').forEach(modal => {
+                    modal.classList.remove('active');
+                });
+            }
+        });
+
+        // ...existing code...
+    </script>
+    <script>
+        function toggleMobileMenu() {
+            document.getElementById('mobileMenu').classList.add('active');
+        }
+        function closeMobileMenu() {
+            document.getElementById('mobileMenu').classList.remove('active');
+        }
+        // إغلاق القائمة عند الضغط خارجها
+        document.addEventListener('click', function (e) {
+            const menu = document.getElementById('mobileMenu');
+            document.addEventListener('click', function (e) {
+                const menu = document.getElementById('mobileMenu');
+                const isHamburger = e.target.classList.contains('hamburger') || e.target.closest('.hamburger');
+                const isCloseButton = e.target.classList.contains('close-mobile-menu') || e.target.closest('.close-mobile-menu');
+
+                if (menu.classList.contains('active') && !menu.contains(e.target) && !isHamburger && !isCloseButton) {
+                    closeMobileMenu();
+                }
+            });
+
+        });
+    </script>
+
+    <script>
+        const openBtn = document.getElementById("openVideoBtn");
+        const modal = document.getElementById("videoModal");
+        const closeBtn = document.getElementById("closeModal");
+        const videoFrame = document.getElementById("videoFrame");
+
+        openBtn.onclick = function () {
+            // ضع معرّف فيديو يسمح بالتضمين
+            videoFrame.src = "https://www.youtube.com/embed/aNYEtGxjGVc";
+
+            modal.classList.add("active");
+        };
+
+        closeBtn.onclick = function () {
+            modal.classList.remove("active");
+            videoFrame.src = "";
+        };
+
+        window.addEventListener('click', function (e) {
+            if (e.target === modal) {
+                modal.classList.remove("active");
+                videoFrame.src = "";
+            }
+        });
+
+    </script>
+</body>
+
+</html>
