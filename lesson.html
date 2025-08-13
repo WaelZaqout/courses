@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>عرض الكورس</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/lesson.css">
+    <link rel="stylesheet" href="css/main.css">
+
+</head>
+
+<body>
+    <header>
+        <nav>
+            <a href="index.html" class="logo">🎓 منصتي</a>
+            <a href="index.html" class="back-btn">
+                <i class="fas fa-arrow-right"></i>
+                العودة للرئيسية
+            </a>
+        </nav>
+    </header>
+
+    <main>
+        <div class="course-header">
+            <h1 class="course-title">إنشاء قالب ووردبريس احترافي </h1>
+            <div class="course-info">
+                <span><i class="fas fa-star"></i> 49 (تقييمات)</span>
+                <span><i class="fas fa-clock"></i> 22:58:14</span>
+                <span><i class="fas fa-globe"></i> الإنجليزية</span>
+                <span><i class="fas fa-user"></i> أليساندرو كاستيلاني</span>
+                <span class="course-tag">ووردبريس</span>
+            </div>
+        </div>
+
+        <div class="course-container">
+            <!-- Sidebar -->
+            <aside class="sidebar">
+                <div class="rating-container">
+                    <h2 class="section-title">تقييم الكورس</h2>
+                    <div class="rating-value">5</div>
+                    <div class="rating-stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <div class="rating-count">49 تقييمات</div>
+                    <button class="rate-button">عرض تقييمات الطلاب</button>
+                </div>
+
+                <!-- Related Courses Section -->
+                <div class="related-courses">
+                    <h2 class="section-title">كورسات مشابهة</h2>
+                    <div class="related-course-card">
+                        <img src="img/algebra.jpg" alt="Course Image" class="course-image">
+                        <div class="course-details">
+                            <div class="course-name">تصميم موقع ويب احترافي باستخدام HTML و CSS</div>
+                            <div class="course-duration">15:30:00</div>
+                            <div class="course-author">محمد علي</div>
+                        </div>
+                    </div>
+                    <div class="related-course-card">
+                        <img src="img/algebra.jpg" alt="Course Image" class="course-image">
+                        <div class="course-details">
+                            <div class="course-name">تطوير تطبيقات الهاتف باستخدام React Native</div>
+                            <div class="course-duration">18:45:00</div>
+                            <div class="course-author">أحمد حسن</div>
+                        </div>
+                    </div>
+                    <div class="related-course-card">
+                        <img src="img/algebra.jpg" alt="Course Image" class="course-image">
+                        <div class="course-details">
+                            <div class="course-name">إدارة قواعد البيانات باستخدام MySQL</div>
+                            <div class="course-duration">12:20:00</div>
+                            <div class="course-author">رانيا عصام</div>
+                        </div>
+                    </div>
+                </div>
+            </aside>
+
+            <!-- Main Content Area -->
+            <section class="main-content">
+                <!-- Tabs -->
+                <div class="tabs">
+                    <button class="tab-button active" data-tab="content">
+                        <i class="fas fa-list"></i>
+                        المحتويات
+                    </button>
+                    <button class="tab-button" data-tab="tests">
+                        <i class="fas fa-clipboard-list"></i>
+                        الاختبارات
+                    </button>
+                </div>
+
+                <!-- Video Player -->
+                <div class="video-container">
+                    <iframe id="video-player" width="100%" height="360" src="https://www.youtube.com/embed/aNYEtGxjGVc"
+                        title="YouTube video player" frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                        allowfullscreen>
+                    </iframe>
+                </div>
+
+
+                <!-- Tab Content -->
+                <div id="content" class="tab-content active">
+
+                    <!-- القسم الأول: مقدمة -->
+                    <details class="accordion" open>
+                        <summary>
+                            <div class="acc-left">
+                                <span class="acc-icon"><i class="fas fa-list"></i></span>
+                                <span>مقدمة</span>
+                            </div>
+                            <i class="fas fa-chevron-down acc-chevron"></i>
+                        </summary>
+                        <div class="accordion-body" id="intro-list">
+
+                            <div class="video-item" data-video-id="1"
+                                data-video-url="https://www.youtube.com/embed/aNYEtGxjGVc">
+                                <div class="video-info">
+                                    <div class="video-title">مقدمة ووردبريس</div>
+                                    <div class="video-duration">00:05:25</div>
+                                </div>
+                                <div class="play-button"><i class="fas fa-play"></i></div>
+                            </div>
+
+                            <div class="video-item" data-video-id="2"
+                                data-video-url="https://www.youtube.com/embed/aNYEtGxjGVc">
+                                <div class="video-info">
+                                    <div class="video-title">الجزء 1 - خطوط مخصصة وأيقونات وهياكل المجلدات</div>
+                                    <div class="video-duration">00:26:54</div>
+                                </div>
+                                <div class="play-button"><i class="fas fa-play"></i></div>
+                            </div>
+
+                            <div class="video-item" data-video-id="3"
+                                data-video-url="https://www.youtube.com/embed/aNYEtGxjGVc">
+                                <div class="video-info">
+                                    <div class="video-title">الجزء 2 - إنشاء صفحة إدارة مخصصة</div>
+                                    <div class="video-duration">00:21:22</div>
+                                </div>
+                                <div class="play-button"><i class="fas fa-play"></i></div>
+                            </div>
+
+                            <div class="video-item" data-video-id="4"
+                                data-video-url="https://www.youtube.com/embed/aNYEtGxjGVc">
+                                <div class="video-info">
+                                    <div class="video-title">الجزء 3 - إنشاء صفحات فرعية للإدارة</div>
+                                    <div class="video-duration">00:17:35</div>
+                                </div>
+                                <div class="play-button"><i class="fas fa-play"></i></div>
+                            </div>
+
+                            <div class="video-item" data-video-id="5"
+                                data-video-url="https://www.youtube.com/embed/aNYEtGxjGVc">
+                                <div class="video-info">
+                                    <div class="video-title">الجزء 4 - خيارات مخصصة مع الـAPI</div>
+                                    <div class="video-duration">00:32:38</div>
+                                </div>
+                                <div class="play-button"><i class="fas fa-play"></i></div>
+                            </div>
+
+                            <div class="video-item" data-video-id="6"
+                                data-video-url="https://www.youtube.com/embed/aNYEtGxjGVc">
+                                <div class="video-info">
+                                    <div class="video-title">الجزء 5 - حقول السوشيال ووظائف التنقية</div>
+                                    <div class="video-duration">00:19:07</div>
+                                </div>
+                                <div class="play-button"><i class="fas fa-play"></i></div>
+                            </div>
+
+                        </div>
+                    </details>
+
+                    <!-- القسم الثاني: مواضيع متقدمة -->
+                    <details class="accordion">
+                        <summary>
+                            <div class="acc-left">
+                                <span class="acc-icon"><i class="fas fa-layer-group"></i></span>
+                                <span>مواضيع متقدمة</span>
+                            </div>
+                            <i class="fas fa-chevron-down acc-chevron"></i>
+                        </summary>
+                        <div class="accordion-body" id="advanced-list">
+
+                            <div class="video-item" data-video-id="7"
+                                data-video-url="https://www.youtube.com/embed/aNYEtGxjGVc">
+                                <div class="video-info">
+                                    <div class="video-title">الجزء 6 - تضمين CSS في لوحة الإدارة</div>
+                                    <div class="video-duration">00:25:45</div>
+                                </div>
+                                <div class="play-button"><i class="fas fa-play"></i></div>
+                            </div>
+
+                            <div class="video-item" data-video-id="8"
+                                data-video-url="https://www.youtube.com/embed/aNYEtGxjGVc">
+                                <div class="video-info">
+                                    <div class="video-title">الجزء 7 - إنشاء ويدجات مخصصة</div>
+                                    <div class="video-duration">00:20:15</div>
+                                </div>
+                                <div class="play-button"><i class="fas fa-play"></i></div>
+                            </div>
+
+                        </div>
+                    </details>
+
+                </div>
+
+
+                <div id="tests" class="tab-content">
+                    <div class="empty-state">
+                        <i class="fas fa-clipboard-list"></i>
+                        <h3>لا توجد اختبارات متاحة</h3>
+                        <p>سيتم إضافة الاختبارات قريبًا</p>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <script>
+        // Tab functionality
+        document.querySelectorAll('.tab-button').forEach(button => {
+            button.addEventListener('click', function () {
+                // Remove active class from all buttons
+                document.querySelectorAll('.tab-button').forEach(btn => {
+                    btn.classList.remove('active');
+                });
+
+                // Remove active class from all content
+                document.querySelectorAll('.tab-content').forEach(content => {
+                    content.classList.remove('active');
+                });
+
+                // Add active class to clicked button and corresponding content
+                this.classList.add('active');
+                const tabId = this.getAttribute('data-tab');
+                document.getElementById(tabId).classList.add('active');
+            });
+        });
+
+        // Video player functionality
+
+        document.querySelectorAll('.video-item').forEach(item => {
+            item.addEventListener('click', function () {
+                const videoUrl = this.getAttribute('data-video-url');
+
+                const videoPlayer = document.getElementById('video-player');
+                videoPlayer.src = videoUrl;
+
+
+                // تمييز العنصر النشط
+                document.querySelectorAll('.video-item').forEach(el => {
+                    el.style.backgroundColor = '';
+                });
+                this.style.backgroundColor = '#f8f9fa';
+            });
+        });
+    </script>
+    <script>
+        // تشغيل فيديو عند اختيار عنصر
+        function attachVideoItemHandlers() {
+            document.querySelectorAll('.video-item').forEach(item => {
+                item.addEventListener('click', function () {
+                    const videoUrl = this.getAttribute('data-video-url');
+                    if (!videoUrl) return;
+
+                    const player = document.getElementById('video-player');
+                    // لو نفس الرابط لا تعيد التحميل بلا داعٍ
+                    if (player.src !== videoUrl) {
+                        player.src = videoUrl;
+                    }
+
+                    // تمييز العنصر النشط
+                    document.querySelectorAll('.video-item').forEach(el => el.style.backgroundColor = '');
+                    this.style.backgroundColor = '#f8f9fa';
+                });
+            });
+        }
+
+        attachVideoItemHandlers();
+
+        // سلوك Accordion: اسمح بفتح قسم واحد فقط
+        const accordions = document.querySelectorAll('details.accordion');
+        accordions.forEach(acc => {
+            acc.addEventListener('toggle', () => {
+                if (acc.open) {
+                    // أغلق البقية
+                    accordions.forEach(other => {
+                        if (other !== acc) other.removeAttribute('open');
+                    });
+
+                    // تشغيل أول فيديو في هذا القسم إذا لا يوجد اختيار سابق
+                    const firstItem = acc.querySelector('.video-item');
+                    const player = document.getElementById('video-player');
+                    if (firstItem && (!player.src || player.src.trim() === '' || player.src.endsWith('#'))) {
+                        firstItem.click();
+                    }
+                }
+            });
+        });
+
+        // عند تحميل الصفحة: شغّل أول فيديو من أول قسم مفتوح (إن وجد)
+        window.addEventListener('DOMContentLoaded', () => {
+            const firstOpen = document.querySelector('details.accordion[open]');
+            if (firstOpen) {
+                const firstItem = firstOpen.querySelector('.video-item');
+                if (firstItem) firstItem.click();
+            }
+        });
+
+        // **مهم**: إن بدّلت تبويب "الاختبارات/المحتويات"، تأكد أن الفيديو يبقى كما هو
+        document.querySelectorAll('.tab-button').forEach(btn => {
+            btn.addEventListener('click', () => {
+                // لا شيء إضافي مطلوب هنا لأن الإطار يبقى داخل نفس الصفحة
+                // لكن يمكن لاحقًا حفظ آخر عنصر مُشغّل في localStorage.
+            });
+        });
+    </script>
+
+</body>
+
+</html>

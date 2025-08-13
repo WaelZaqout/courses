@@ -9,6 +9,7 @@
     <!-- <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script> -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/main.css">
 
 </head>
 
@@ -16,7 +17,7 @@
     <!-- Navigation -->
     <nav>
         <div class="nav-container">
-            <div class="logo">منصتي</div>
+            <div class="logo">🎓 منصتي</div>
             <div class="nav-links">
                 <div class="dropdown">
                     <button class="dropbtn">الاقسام <i class="fas fa-chevron-down"></i></button>
@@ -77,7 +78,7 @@
                 </p>
                 <div class="hero-buttons">
                     <button onclick="openStudentModal()" class="btn-primary highlight">سجل الآن</button>
-                    <button class="btn-secondary">تصفح المقررات</button>
+                    <a href="#courses" class="btn-secondary">تصفح المقررات</a>
                     <button class="btn-video" id="openVideoBtn"><i class="fas fa-play"></i> شاهد الفيديو
                         التعريفي</button>
 
@@ -180,7 +181,7 @@
                     </div>
                     <div class="course-footer">
                         <div class="course-price">99<span>ر.س</span></div>
-                        <a href="courses.html" class="course-btn">مشاهدة الكورس</a>
+                        <a href="coursedetails.html" class="course-btn">مشاهدة الكورس</a>
 
                     </div>
                 </div>
@@ -209,7 +210,7 @@
                     </div>
                     <div class="course-footer">
                         <div class="course-price">149<span>ر.س</span></div>
-                        <a href="courses.html" class="course-btn">مشاهدة الكورس</a>
+                        <a href="coursedetails.html" class="course-btn">مشاهدة الكورس</a>
 
                     </div>
                 </div>
@@ -237,13 +238,13 @@
                     </div>
                     <div class="course-footer">
                         <div class="course-price">199<span>ر.س</span></div>
-                        <a href="courses.html" class="course-btn">شاهد الكورس</a>
+                        <a href="coursedetails.html" class="course-btn">شاهد الكورس</a>
                     </div>
                 </div>
             </div>
         </div>
         <div class="more-courses-btn-wrapper">
-            <button class="more-courses-btn">عرض المزيد من المقررات</button>
+            <a href="courses.html" class="more-courses-btn">عرض المزيد من المقررات</a>
         </div>
     </section>
 
@@ -322,7 +323,8 @@
                 </div>
             </div>
             <div id="student-plans" class="pricing-grid" style="display: none;">
-                <div class="pricing-card">
+                <div class="pricing-card recommended">
+                    <span class="recommended-badge">مقترحة</span>
                     <h3>فيديو فردي</h3>
                     <div class="price">50 <span>ر.س</span></div>
                     <ul>
@@ -353,6 +355,7 @@
                     <button class="subscribe-btn">اشترك الآن</button>
                 </div>
             </div>
+
         </div>
     </section>
 
